@@ -11,8 +11,6 @@ function imageMode(color) {
     image1.src = "img/undraw_proud_coder_dark.svg";
     image2.src = "img/undraw_feeling_proud_dark.svg";
     image3.src = "img/undraw_conceptual_idea_dark.svg";
-
-
 }
 
 
@@ -40,12 +38,26 @@ function lightMode() {
 function switchTheme(event){
     if (event.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
         darkMode();
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
         lightMode();
     }
 }
 
 //Event Listener
 toggleSwitch.addEventListener('change', switchTheme);
+
+
+//Check local storage for theme changes
+const currentTheme = localStorage.getItem('theme');
+if(currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+        darkMode();
+    }
+}
