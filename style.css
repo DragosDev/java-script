@@ -144,23 +144,48 @@ input:checked + .slider::before {
 
 /*Image Container*/
 .image-container{
-  margin: 10px 30%;
-  border-radius:10px;
+  margin: 10px 20%;
+  box-shadow:var(--box-shadow);
+
 }
 
 .image-container img {
   width: 100%;
-  margin-top: 5px;
+ 
 }
 
 /*Media Query: Large Smartphone*/
 
-@media (max-width:600px){
+@media (max-width:605px){
   h1{
-    font-size: 30px;
+    font-size: 25px;
+    margin-top:32px;
+   
+  }
+
+  .toggle-text{
+    display: none;
   }
 
   .image-container{
-    margin: 10px;
+    margin: 20px;
+  }
+}
+
+/*Media Query: Large Smartphone*/
+
+@media (max-width:400px){
+  h1{
+    font-size: 25px;
+    margin-top:72px;
+   
+  }
+
+  .toggle-text{
+    display: none;
+  }
+
+  .image-container{
+    margin: 20px;
   }
 }
